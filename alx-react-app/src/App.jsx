@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import WelcomeMessage from './WelcomeMessage'
 import Header from './Header'
-import Main from './Main'
+import Main from './MainContent'
 import Footer from './Footer'
 
 function App() {
@@ -13,10 +13,10 @@ function App() {
   return (
     
     <>
-    <WelcomeMessage />
     <Header/>
-    <Main/>
+    <MainContent/>
     <Footer/>
+    <WelcomeMessage />
 
       <div>
         <a href="https://vite.dev" target="_blank">
