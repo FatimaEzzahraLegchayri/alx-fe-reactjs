@@ -6,7 +6,7 @@ import './App.css'
 // import Header from './components/Header'
 // import MainContent from './components/MainContent'
 // import Footer from './components/Footer'
-import UseContext from './components/UserContext.js'
+import UserContext from './components/UserContext.js'
 import ProfilePage from './components/ProfilePage.jsx'
 
 
@@ -22,9 +22,9 @@ function App() {
     {/* <MainContent /> */}
     {/* <Footer /> */}
     {/* <UserProfile name="Alice" age="25" bio="Loves hiking and photography" /> */}
-      <UseContext.Provider value={userData}>
+      <UserContext.Provider value={userData}>
         <ProfilePage />
-      </UseContext.Provider>
+      </UserContext.Provider>
     
       
       
