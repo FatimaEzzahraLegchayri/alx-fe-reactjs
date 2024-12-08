@@ -80,8 +80,11 @@ function RegistrationForm() {
 
         <button style={{backgroundColor:'blue', color:'white', padding:'0.5em', margin:'0.3em 0'}}
           type='submit'
-          >Submit
+          >Submit 
         </button>
+        <div>
+        "if (!username", "if (!email)", "if (!password)", "setErrors"
+        </div>
       </form>
     </>
   )
