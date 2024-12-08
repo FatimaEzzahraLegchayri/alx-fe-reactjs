@@ -2,27 +2,36 @@ import React, { useState } from 'react'
 import { object } from 'yup';
 
 function RegistrationForm() {
-  const [data, setData] = useState({username: '', email: '', password: ''})
+  // const [data, setData] = useState({username: '', email: '', password: ''})
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [error, setError] = useState({});
   
 
-  const handelChange = (e) =>{
-    const {name, value} = e.target
-    setData(prevState =>({...prevState, [name]: value}))
+  const handelNameChange = (e) =>{
+    setUsername(e.target.value)
   }
+  const handelEmailChange = (e) =>{
+    setEmail(e.target.value)
+  }
+  const handelPassChange = (e) =>{
+    setPassword(e.target.value)
+  }
+
   const validate = ()=>{
     const errors = {}
-    if(!data.username){
+    if(!username){
       errors.username = 'username is required.'
     }
-    if(!data.email){
+    if(!email){
       errors.email = 'email is required.'
-    }else if(!/\S+@\S+\.\S+/.test(data.email)){
+    }else if(!/\S+@\S+\.\S+/.test(email)){
       errors.email = "email is not valid"
     }
-    if(!data.password){
+    if(!password){
       errors.password = 'password is required.'
-    }else if(data.password.length < 6){
+    }else if(password.length < 6){
       errors.password = 'Password must be at least 6 characters.'
     }
 
@@ -33,7 +42,7 @@ function RegistrationForm() {
     e.preventDefault()
     if( validate()){
      
-    console.log('data.....',data)
+    console.log('data.....',username,email,password)
   }}
 
 
@@ -41,8 +50,8 @@ function RegistrationForm() {
     <>
       <form onSubmit={handelSubmit} style={{display:'flex', flexDirection: 'column', width:'60%',margin:' 5em auto' }}>
         <input 
-          value={data.username}
-          onChange={handelChange}
+          value={username}
+          onChange={handelNameChange}
           name='username'
           type="text" 
           placeholder='username' 
@@ -50,8 +59,8 @@ function RegistrationForm() {
         />
         {error.username && <span  style={{color: 'red'}}>{error.username}</span> }
         <input 
-          value={data.email}
-          onChange={handelChange}
+          value={email}
+          onChange={handelEmailChange}
           name='email'
           type="email" 
           placeholder='email' 
@@ -60,8 +69,8 @@ function RegistrationForm() {
         {error.email && <span  style={{color: 'red'}}>{error.email}</span> }
 
         <input 
-          value={data.password}
-          onChange={handelChange}
+          value={password}
+          onChange={handelPassChange}
           name='password'
           type="password"  
           placeholder='password'
