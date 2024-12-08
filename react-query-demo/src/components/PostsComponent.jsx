@@ -8,15 +8,20 @@ const fetchData = async()=>{
     return res.json()
 }
 function PostsComponent() {
-    const {data, error, isLoading} = useQuery('fetch', fetchData)
+    const {data, error, isLoading, refetch, isFetching} = useQuery('fetch', fetchData,{staleTime:5000})
     if(isLoading) return <div>loading...</div>
     if(error) return <div>error loading data</div>
 
   return (
     <div>
+        <button onClick={refetch}
+        >
+        {isFetching ? 'fetching ...' : 'refrech'}
+        </button>
         {data.map(item =>(
            <div key={item.id}>{item.title}</div>
         ))}
+        
     </div>
     
   )
