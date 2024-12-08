@@ -16,7 +16,7 @@ function RegistrationForm() {
     <>
       <form onSubmit={handelSubmit} style={{display:'flex', flexDirection: 'column', width:'60%',margin:' 5em auto' }}>
         <input 
-          value={data.username}
+          value={username}
           onChange={handelChange}
           name='username'
           type="text" 
@@ -24,7 +24,7 @@ function RegistrationForm() {
           style={{padding:'0.5em', margin:'0.3em 0'}}
         />
         <input 
-          value={data.email}
+          value={email}
           onChange={handelChange}
           name='email'
           type="email" 
@@ -32,7 +32,7 @@ function RegistrationForm() {
           style={{padding:'0.5em', margin:'0.3em 0'}}
         />
         <input 
-          value={data.password}
+          value={password}
           onChange={handelChange}
           name='password'
           type="password"  
