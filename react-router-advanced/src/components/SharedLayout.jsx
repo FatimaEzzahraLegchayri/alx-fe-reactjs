@@ -1,14 +1,21 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
-function SharedLayout() {
+function SharedLayout({user}) {
+    console.log('user in SharedLayout', user)
   return (
     <div>
         <ul style={{display:'flex', flexDirection:'column'}}>
-            <p>welcome to uor profile</p>
-            <Link to={'/'}>profile</Link>
-            <Link to={'details'} >datails</Link>
-            <Link to={'settings'} >settings</Link>
+            <p>welcome to uor profile {user.email}</p>
+            <NavLink style={({isActive}) => {
+                return {color : isActive? 'red' : 'blue'}
+            }} 
+                to={'/'}
+            >
+                profile
+            </NavLink>
+            <NavLink to={'details'} >datails</NavLink>
+            <NavLink to={'settings'} >settings</NavLink>
         </ul>
         <Outlet />
     </div>

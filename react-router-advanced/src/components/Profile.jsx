@@ -1,5 +1,6 @@
 import React from 'react'
-import {Link, Routes, Route, ProfileDetails, ProfileSettings} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
+// import {  Routes, Route, ProfileDetails, ProfileSettings}  from 'react-router-dom'
 
 
 function Profile() {
