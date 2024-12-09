@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 
-function ProtectedRoutes({user, children}) {
+function ProtectedRoute({user, children}) {
     console.log('user..........', user)
     if(!user){
         return <Navigate to={'/login'} />
@@ -15,5 +15,4 @@ function ProtectedRoutes({user, children}) {
     } 
    
 }
-exist
-export default ProtectedRoutes
+export default ProtectedRoute

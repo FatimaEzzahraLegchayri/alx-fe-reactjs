@@ -6,7 +6,7 @@ import SharedLayout from './components/SharedLayout'
 import Login from './components/Login'
 import { useState } from 'react'
 import Dashboard from './components/Dashboard'
-import ProtectedRoutes from './components/ProtectedRoutes'
+import ProtectedRoute from './components/ProtectedRoute'
 
 
 function App() {
@@ -19,9 +19,9 @@ function App() {
       <Routes>
 
         <Route path='/' element={
-          <ProtectedRoutes user={user} >
+          <ProtectedRoute user={user} >
             <SharedLayout user={user} />
-          </ProtectedRoutes>
+          </ProtectedRoute>
           }  
           >
 
@@ -36,9 +36,9 @@ function App() {
         <Route path='/login' element={<Login setUser={setUser} />} />
 
         <Route path='/dashboard' element={
-          <ProtectedRoutes user={user} >
+          <ProtectedRoute user={user} >
           <Dashboard user={user} /> 
-          </ProtectedRoutes>
+          </ProtectedRoute>
         }
         />
 
