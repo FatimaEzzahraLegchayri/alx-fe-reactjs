@@ -18,7 +18,7 @@ function App() {
      <BrowserRouter>
       <Routes>
 
-        <Route path='/' element={
+        <Route path='/profile' element={
           <ProtectedRoute user={user} >
             <SharedLayout user={user} />
           </ProtectedRoute>
