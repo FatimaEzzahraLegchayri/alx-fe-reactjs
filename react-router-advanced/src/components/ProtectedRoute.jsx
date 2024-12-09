@@ -15,4 +15,5 @@ function ProtectedRoute({user, children}) {
     } 
    
 }
+useAuth
 export default ProtectedRoute
