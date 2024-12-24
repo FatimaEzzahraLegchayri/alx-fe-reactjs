@@ -127,3 +127,4 @@ function AddRecipeForm() {
 }
 
 export default AddRecipeForm;
+validate
