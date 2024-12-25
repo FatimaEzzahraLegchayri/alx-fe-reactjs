@@ -1,12 +1,14 @@
-import axios from 'axios';
+const [page, setPage] = useState(1);
 
-const BASE_URL = 'https://api.github.com/users';
-
-export const fetchUserData = async (username) => {
+const handleLoadMore = async () => {
+  setLoading(true);
   try {
-    const response = await axios.get(`${BASE_URL}/${username}`);
-    return response.data;
-  } catch (error) {
-    throw new Error('Failed to fetch user data');
+    const data = await fetchAdvancedSearch(query.join(' '), page + 1);
+    setResults((prev) => [...prev, ...data.items]);
+    setPage(page + 1);
+  } catch (err) {
+    setError('Failed to load more results.');
+  } finally {
+    setLoading(false);
   }
 };
