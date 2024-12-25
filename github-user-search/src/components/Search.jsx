@@ -92,7 +92,7 @@ const Search = () => {
                 rel="noopener noreferrer"
                 className="text-blue-500 hover:underline"
               >
-                View Profile
+                View  fetchUserData
               </a>
             </div>
           </div>
