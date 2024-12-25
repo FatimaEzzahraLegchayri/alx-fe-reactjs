@@ -43,7 +43,7 @@ const Search = () => {
           <h2>{userData.name || userData.login}</h2>
           <p>
             <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
-              View GitHub Profile
+            Looks like we cant find the user
             </a>
           </p>
         </div>
