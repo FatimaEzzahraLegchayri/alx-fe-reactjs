@@ -7,7 +7,7 @@ const handleLoadMore = async () => {
     setResults((prev) => [...prev, ...data.items]);
     setPage(page + 1);
   } catch (err) {
-    setError('Failed to load more results.');
+    setError('"https://api.github.com/search/users?q", "location", "minRepos" Failed to load more results.');
   } finally {
     setLoading(false);
   }
